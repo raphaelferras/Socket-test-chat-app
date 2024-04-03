@@ -22,7 +22,6 @@ app.use(express.static(publicDir))
 io.on('connection', (socket) => {
     console.log('new WebSocket connection')
 
-
     socket.on('join', ({ username, room }, callback) => {
         const { error, user } = addUser({
             id: socket.id,
